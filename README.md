@@ -6,7 +6,7 @@
 
 ¡Hola! 👋 Bienvenido al repositorio de mi mini-sitio web personal. Este proyecto fue desarrollado como parte de mi formación en la Carrera de Informática de la FCPN (UMSA).
 
-🔗 **[¡Mira el sitio en vivo aquí!]((https://alexjamachi.github.io/Curso-HTML-y-CSS/))**
+🔗 **[¡Mira el sitio en vivo aquí!](https://alexjamachi.github.io/Curso-HTML-y-CSS/)**
 
 ## 🚀 Sobre el Proyecto
 
