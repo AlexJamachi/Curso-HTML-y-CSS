@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Contacto - Alex Arturo Jamachi</title>
+</head>
+<body>
+
+    <header id="encabezado">
+        <h1>Ponte en Contacto</h1>
+        <nav class="menu-navegacion">
+            <ul>
+                <li><a href="index.html">Sobre Mí</a></li>
+                <li><a href="proyectos.html">Tecnologías</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="contenido-principal">
+        
+        <section id="info-contacto">
+            <h2>Información Directa</h2>
+            <p>Si deseas contactarme para proyectos universitarios, oportunidades de desarrollo o consultas técnicas, puedes usar los siguientes medios:</p>
+            <ul class="lista-contacto">
+                <li><strong>Celular:</strong> 75851971</li>
+                <li><strong>Correo Electrónico:</strong> alexjamachi2.c@gmail.com</li>
+                <li><strong>Ubicación:</strong> La Paz, Bolivia.</li>
+            </ul>
+        </section>
+
+        <section id="formulario">
+            <h2>Envíame un Mensaje</h2>
+            <form action="#" method="POST" class="formulario-contacto">
+                <label for="nombre">Nombre Completo:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Ej. Juan Pérez" required>
+
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" placeholder="tu@correo.com" required>
+
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
+
+                <button type="submit" class="btn-enviar">Enviar Mensaje</button>
+            </form>
+        </section>
+
+    </main>
+
+</body>
+</html>

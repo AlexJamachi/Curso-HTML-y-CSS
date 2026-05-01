@@ -3,76 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>About Me - Alex Arturo Jamachi Condori</title>
+    <title>Portafolios — Alex Jamachi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-fondo: #0a0a0f;
+            --color-fondo-card: #111118;
+            --color-borde: rgba(255, 255, 255, 0.07);
+            --color-acento: #8b5cf6;
+            --color-acento-glow: rgba(139, 92, 246, 0.3);
+            --color-texto: #e2e8f0;
+            --color-texto-suave: #94a3b8;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'DM Sans', sans-serif;
+            background-color: var(--color-fondo);
+            color: var(--color-texto);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-image: radial-gradient(ellipse 50% 50% at 50% 50%, rgba(139, 92, 246, 0.08) 0%, transparent 80%);
+        }
+        h1 {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 10px;
+            text-align: center;
+            color: #ffffff;
+        }
+        p.desc {
+            color: var(--color-texto-suave);
+            margin-bottom: 50px;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+        .contenedor-opciones {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 0 20px;
+        }
+        .tarjeta {
+            background-color: var(--color-fondo-card);
+            border: 1px solid var(--color-borde);
+            border-radius: 20px;
+            padding: 40px 30px;
+            width: 300px;
+            text-align: center;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .tarjeta:hover {
+            transform: translateY(-8px);
+            border-color: var(--color-acento);
+            box-shadow: 0 10px 30px var(--color-acento-glow);
+        }
+        .tarjeta h2 {
+            font-family: 'Syne', sans-serif;
+            color: #ffffff;
+            margin: 0;
+            font-size: 1.6rem;
+        }
+        .tarjeta p {
+            color: var(--color-texto-suave);
+            margin: 0;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            flex-grow: 1;
+        }
+        .btn {
+            margin-top: 15px;
+            background-color: transparent;
+            border: 1px solid var(--color-borde);
+            color: var(--color-texto);
+            padding: 12px 20px;
+            border-radius: 10px;
+            font-weight: 500;
+            display: inline-block;
+            transition: background 0.3s, color 0.3s, border-color 0.3s;
+        }
+        .tarjeta:hover .btn {
+            background-color: var(--color-acento);
+            border-color: var(--color-acento);
+            color: #ffffff;
+        }
+    </style>
 </head>
 <body>
-
-    <header id="encabezado">
-        <h1>Acerca de Mí - Alex Arturo Jamachi Condori</h1>
-        <nav class="menu-navegacion">
-            <ul>
-                <li><a href="index.html">Sobre Mí</a></li>
-                <li><a href="proyectos.html">Tecnologías</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main class="contenido-principal">
+    <h1>Alex Arturo Jamachi Condori</h1>
+    <p class="desc">Selecciona la versión del portafolio que deseas visualizar</p>
+    
+    <div class="contenedor-opciones">
+        <a href="./v1/index.html" class="tarjeta">
+            <h2>Versión 1.0</h2>
+            <p>Primera versión del portafolio. Diseño clásico con estructura multipágina.</p>
+            <span class="btn">Ver Versión Antigua</span>
+        </a>
         
-        <section id="sobre-mi">
-            <h2>Mi Perfil</h2>
-            <div class="contenedor-perfil">
-                <figure class="foto-perfil">
-                    <img src="perfil.jpg" alt="Fotografía con traje formal">
-                    <figcaption>Alex Jamachi - UMSA</figcaption>
-                </figure>
-                
-                <p>
-                    Soy <strong>estudiante universitario</strong> en curso de la Carrera de Informática en la <em>FCPN (UMSA)</em>. A lo largo de mi formación, me he destacado por mi <strong>alto rendimiento académico</strong>, logrando el reconocimiento de <em>Bachiller de Excelencia</em> y la distinción del "Año de la Juventud".
-                </p>
-                <a href="index.html#skills" class="enlace-ancla">⬇ Saltar directo a mis Habilidades</a>
-            </div>
-        </section>
-
-        <section id="datos-personales">
-            <h2>Datos Personales</h2>
-            <table class="tabla-info">
-                <thead>
-                    <tr>
-                        <th>Campo</th>
-                        <th>Información</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr><td>Nombre</td><td>Alex Arturo Jamachi Condori</td></tr>
-                    <tr><td>C.I.</td><td>13764342 L.P.</td></tr>
-                    <tr><td>Nacionalidad</td><td>Boliviana</td></tr>
-                </tbody>
-            </table>
-        </section>
-
-        <section id="skills">
-            <h2>Conocimientos y Habilidades</h2>
-            <ul class="lista-habilidades">
-                <li><strong>Desarrollo de Software:</strong> Programación intermedia en Java y Python.</li>
-                <li><strong>Herramientas (IDEs):</strong> NetBeans, IntelliJ IDEA y VS Code.</li>
-                <li><strong>Redes:</strong> Cisco Packet Tracer.</li>
-            </ul>
-        </section>
-
-        <section id="top-5-eventos">
-            <h2>Top 5: Cursos y Congresos Destacados</h2>
-            <ol class="lista-top">
-                <li>Cybersecurity Essentials - Cisco.</li>
-                <li>Introduction to Cybersecurity - Cisco.</li>
-                <li>XII Congreso Nacional de Ciencias de la Computación.</li>
-                <li>Primer Encuentro de Innovación Tecnológica (UMSA).</li>
-                <li>Competencias de empleabilidad por el bien común.</li>
-            </ol>
-        </section>
-    </main>
-
+        <a href="./v2/index.html" class="tarjeta">
+            <h2>Versión 2.0</h2>
+            <p>Versión mejorada. Enfoque moderno en ciberseguridad, single-page con stack tecnológico actualizado.</p>
+            <span class="btn">Ver Nueva Versión</span>
+        </a>
+    </div>
 </body>
 </html>
