@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolios — Alex Jamachi</title>
+    <title>Proyectos y Portafolios — Alex Jamachi</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
     <style>
@@ -12,13 +12,14 @@
             --color-fondo-card: #111118;
             --color-borde: rgba(255, 255, 255, 0.07);
             --color-acento: #8b5cf6;
+            --color-acento2: #ff6b00; /* Naranja para KaiJu */
             --color-acento-glow: rgba(139, 92, 246, 0.3);
             --color-texto: #e2e8f0;
             --color-texto-suave: #94a3b8;
         }
         body {
             margin: 0;
-            padding: 0;
+            padding: 40px 20px;
             font-family: 'DM Sans', sans-serif;
             background-color: var(--color-fondo);
             color: var(--color-texto);
@@ -28,6 +29,7 @@
             justify-content: center;
             min-height: 100vh;
             background-image: radial-gradient(ellipse 50% 50% at 50% 50%, rgba(139, 92, 246, 0.08) 0%, transparent 80%);
+            box-sizing: border-box;
         }
         h1 {
             font-family: 'Syne', sans-serif;
@@ -41,13 +43,14 @@
             margin-bottom: 50px;
             text-align: center;
             font-size: 1.1rem;
+            max-width: 600px;
         }
         .contenedor-opciones {
             display: flex;
             gap: 30px;
             flex-wrap: wrap;
             justify-content: center;
-            padding: 0 20px;
+            max-width: 1100px;
         }
         .tarjeta {
             background-color: var(--color-fondo-card);
@@ -61,11 +64,17 @@
             display: flex;
             flex-direction: column;
             gap: 15px;
+            position: relative;
+            overflow: hidden;
         }
         .tarjeta:hover {
             transform: translateY(-8px);
             border-color: var(--color-acento);
             box-shadow: 0 10px 30px var(--color-acento-glow);
+        }
+        .tarjeta.destacada:hover {
+            border-color: var(--color-acento2);
+            box-shadow: 0 10px 30px rgba(255, 107, 0, 0.25);
         }
         .tarjeta h2 {
             font-family: 'Syne', sans-serif;
@@ -96,23 +105,44 @@
             border-color: var(--color-acento);
             color: #ffffff;
         }
+        .tarjeta.destacada:hover .btn {
+            background-color: var(--color-acento2);
+            border-color: var(--color-acento2);
+        }
+        .etiqueta {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--color-acento2);
+            color: #fff;
+            font-size: 0.7rem;
+            font-weight: bold;
+            padding: 4px 10px;
+            border-radius: 20px;
+            text-transform: uppercase;
+        }
     </style>
 </head>
 <body>
     <h1>Alex Arturo Jamachi Condori</h1>
-    <p class="desc">Selecciona la versión del portafolio que deseas visualizar</p>
+    <p class="desc">Directorio de proyectos y portafolios desarrollados en la carrera de Informática (FCPN - UMSA).</p>
     
     <div class="contenedor-opciones">
-        <a href="./v1/index.html" class="tarjeta">
-            <h2>Versión 1.0</h2>
-            <p>Primera versión del portafolio. Diseño clásico con estructura multipágina.</p>
-            <span class="btn">Ver Versión Antigua</span>
+        <a href="./kaiju/index.html" class="tarjeta destacada">
+            <span class="etiqueta">Nuevo</span>
+            <h2>KaiJu Tech</h2>
+            <p>Landing page e-commerce de alto rendimiento. Hardware gaming, diseño oscuro y animaciones fluidas.</p>
+            <span class="btn">Ver Proyecto</span>
         </a>
-        
         <a href="./v2/index.html" class="tarjeta">
-            <h2>Versión 2.0</h2>
+            <h2>Portafolio v2.0</h2>
             <p>Versión mejorada. Enfoque moderno en ciberseguridad, single-page con stack tecnológico actualizado.</p>
             <span class="btn">Ver Nueva Versión</span>
+        </a>
+        <a href="./v1/index.html" class="tarjeta">
+            <h2>Portafolio v1.0</h2>
+            <p>Primera versión del portafolio. Diseño clásico con estructura multipágina estructurada.</p>
+            <span class="btn">Ver Versión Antigua</span>
         </a>
     </div>
 </body>

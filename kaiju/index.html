@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KaiJu Tech – Team Up. Fight On.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav-container">
+      <button class="nav-hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-links" id="nav-menu" role="list">
+        <li><a href="#">Productos</a></li>
+        <li><a href="#">Explorar</a></li>
+        <li><a href="#">Servicios</a></li>
+        <li><a href="#">Próximamente</a></li>
+      </ul>
+      
+      <img
+          src="logo.png" class="logo"
+          alt="Logo de KaiJu Tech"
+          onerror="this.style.display='none'"
+      />
+    </nav>
+  </header>
+
+  <script>
+    const btn  = document.querySelector('.nav-hamburger');
+    const menu = document.getElementById('nav-menu');
+
+    btn.addEventListener('click', () => {
+      const open = menu.classList.toggle('nav-links--open');
+      btn.classList.toggle('nav-hamburger--open', open);
+      btn.setAttribute('aria-expanded', open);
+    });
+
+    menu.querySelectorAll('a').forEach(link =>
+      link.addEventListener('click', () => {
+        menu.classList.remove('nav-links--open');
+        btn.classList.remove('nav-hamburger--open');
+        btn.setAttribute('aria-expanded', 'false');
+      })
+    );
+
+    document.addEventListener('click', e => {
+      if (!e.target.closest('.site-header')) {
+        menu.classList.remove('nav-links--open');
+        btn.classList.remove('nav-hamburger--open');
+        btn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  </script>
+
+  <div class="page-grid">
+
+    <section class="hero" aria-label="Bienvenida">
+      <div class="hero-bg-overlay"></div>
+      <div class="hero-content">
+        <p class="hero-welcome">BIENVENIDO A</p>
+        <h1 class="hero-title">KAIJU TECH</h1>
+        <p class="hero-sub">Hardware gaming de alto rendimiento.<br>Team Up. Fight On.</p>
+        <div class="hero-cta-group">
+          <a href="#productos" class="btn btn-primary">Ver Productos</a>
+          <a href="#" class="btn btn-ghost">Explorar Tienda</a>
+        </div>
+      </div>
+      <figure class="hero-product">
+        <div class="hero-product-badge">NUEVO</div>
+        <img
+          src="https://press.asus.com/assets/w_1266,h_633/d4216798-a7a5-44ac-aa2e-1ec21924ae6e/1024_512.jpg"
+          alt="ASUS GeForce RTX 50 Series"
+          onerror="this.style.display='none'"
+        />
+        <figcaption>ASUS GeForce RTX™ 50 Series — Boundless Brilliance</figcaption>
+      </figure>
+    </section>
+
+    <main class="main-content" id="productos">
+
+      <section class="categories" aria-labelledby="cat-heading">
+        <h2 id="cat-heading" class="section-title">Productos</h2>
+        <div class="cat-grid">
+          <a href="#placas" class="cat-card">
+            <div class="cat-icon">🖥️</div>
+            <h3>Placas Base</h3>
+            <p>Gigabyte B760M series</p>
+          </a>
+          <a href="#gpus" class="cat-card">
+            <div class="cat-icon">🎮</div>
+            <h3>Tarjetas Gráficas</h3>
+            <p>Radeon RX 9060 XT</p>
+          </a>
+          <a href="#monitores" class="cat-card">
+            <div class="cat-icon">🖱️</div>
+            <h3>Monitores</h3>
+            <p>4K UHD Gaming</p>
+          </a>
+        </div>
+      </section>
+
+      <section class="product-section" id="placas" aria-labelledby="placas-heading">
+        <h2 id="placas-heading" class="section-title">Placas Base</h2>
+        <div class="product-grid">
+
+          <article class="product-card">
+            <div class="product-tag">Gigabyte</div>
+            <h3 class="product-name">B760M Gaming Plus WiFi DDR4</h3>
+            <ul class="product-specs">
+              <li>Intel® Core™ 12.ª / 13.ª / 14.ª gen</li>
+              <li>VRM digital híbrido 4+1+1 fases</li>
+              <li>DDR4 Dual Channel – 4 ranuras DIMM</li>
+              <li>2× M.2 PCIe 4.0 x4</li>
+              <li>Wi-Fi 6 802.11ax + LAN GbE</li>
+              <li>Q-Flash Plus – BIOS sin CPU</li>
+            </ul>
+            <div class="product-actions">
+              <button class="btn btn-ghost btn-sm">Ver detalles</button>
+              <button class="btn btn-primary btn-sm">Comprar</button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-tag">Gigabyte</div>
+            <h3 class="product-name">B760M Aorus Elite DDR4 Gen5</h3>
+            <ul class="product-specs">
+              <li>Intel® Core™ 12.ª / 13.ª / 14.ª gen</li>
+              <li>VRM híbrido 12+1+1 fases</li>
+              <li>PCIe 5.0 x16 + LAN 2.5 GbE</li>
+              <li>USB-C frontal 10 Gb/s</li>
+              <li>M.2 EZ-Latch sin tornillos</li>
+              <li>Q-Flash Plus – BIOS sin CPU</li>
+            </ul>
+            <div class="product-actions">
+              <button class="btn btn-ghost btn-sm">Ver detalles</button>
+              <button class="btn btn-primary btn-sm">Comprar</button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-tag">Gigabyte</div>
+            <h3 class="product-name">B760M DS3H WiFi6E DDR4 Gen5</h3>
+            <ul class="product-specs">
+              <li>Intel® Core™ 12.ª / 13.ª / 14.ª gen</li>
+              <li>VRM híbrido 6+2+1 fases</li>
+              <li>Wi-Fi 6E + Bluetooth + LAN 2.5 GbE</li>
+              <li>RGB Fusion – ARGB y RGB</li>
+              <li>USB-C 10 Gb/s frontal</li>
+              <li>Q-Flash Plus – BIOS sin CPU</li>
+            </ul>
+            <div class="product-actions">
+              <button class="btn btn-ghost btn-sm">Ver detalles</button>
+              <button class="btn btn-primary btn-sm">Comprar</button>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <section class="product-section" id="gpus" aria-labelledby="gpus-heading">
+        <h2 id="gpus-heading" class="section-title">Tarjetas Gráficas</h2>
+        <div class="product-grid product-grid--2col">
+
+          <article class="product-card product-card--featured">
+            <div class="product-tag product-tag--hot">Nuevo</div>
+            <h3 class="product-name">Radeon™ RX 9060 XT Gaming OC ICE 16G</h3>
+            <ul class="product-specs">
+              <li>GPU: RDNA 4 – 2048 núcleos</li>
+              <li>16 GB GDDR6, 128-bit, 20 Gbps</li>
+              <li>Boost 3320 MHz / Juego 2780 MHz</li>
+              <li>PCIe 5.0 x16 — hasta 7680×4320</li>
+              <li>WINDFORCE 3X + gel térmico servidor</li>
+              <li>1× HDMI 2.1b + 2× DP 2.1a</li>
+            </ul>
+            <div class="product-actions">
+              <button class="btn btn-ghost btn-sm">Ver detalles</button>
+              <button class="btn btn-primary btn-sm">Comprar</button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-tag">Nuevo</div>
+            <h3 class="product-name">Radeon™ RX 9060 XT Gaming 8G</h3>
+            <ul class="product-specs">
+              <li>GPU: RDNA 4 – 2048 núcleos</li>
+              <li>8 GB GDDR6, 128-bit, ~20 Gbps</li>
+              <li>Boost 3130 MHz / Juego 2530 MHz</li>
+              <li>PCI Express 5.0 x16</li>
+              <li>WINDFORCE – heatpipes + cobre</li>
+              <li>2× DP 2.1a + 1× HDMI 2.1b</li>
+            </ul>
+            <div class="product-actions">
+              <button class="btn btn-ghost btn-sm">Ver detalles</button>
+              <button class="btn btn-primary btn-sm">Comprar</button>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <section class="product-section" id="monitores" aria-labelledby="mon-heading">
+        <h2 id="mon-heading" class="section-title">Monitores</h2>
+        <div class="product-grid product-grid--2col">
+
+          <article class="product-card">
+            <div class="product-tag">MSI</div>
+            <h3 class="product-name">M27UP ICE Gaming Monitor</h3>
+            <ul class="product-specs">
+              <li>27″ SS-IPS – 4K UHD (3840×2160)</li>
+              <li>160 Hz 4K / 320 Hz FHD con un clic</li>
+              <li>1ms GTQ – G-Sync Compatible</li>
+              <li>95% DCI-P3 / 125% sRGB</li>
+              <li>KVM integrado – un teclado, múltiples PCs</li>
+              <li>Night Vision, Aim Stabilizer, Game Assist</li>
+            </ul>
+            <div class="product-actions">
+              <button class="btn btn-ghost btn-sm">Ver detalles</button>
+              <button class="btn btn-primary btn-sm">Comprar</button>
+            </div>
+          </article>
+
+          <article class="product-card product-card--featured">
+            <div class="product-tag product-tag--hot">Top</div>
+            <h3 class="product-name">Aorus FO32U</h3>
+            <ul class="product-specs">
+              <li>31.5″ QD-OLED – 4K UHD (3840×2160)</li>
+              <li>165 Hz – 0.03ms GtG – 1.5M:1</li>
+              <li>HDR True Black 400 – 1000 nits pico</li>
+              <li>99% DCI-P3 – 10 bits</li>
+              <li>KVM + Joystick 5-Way OSD</li>
+              <li>OLED Care – protección burn-in</li>
+            </ul>
+            <div class="product-actions">
+              <button class="btn btn-ghost btn-sm">Ver detalles</button>
+              <button class="btn btn-primary btn-sm">Comprar</button>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <section class="promo-banner" aria-label="Próximamente">
+        <div class="promo-content">
+          <span class="promo-label">Próximamente</span>
+          <h2>Subasta de Componentes Online</h2>
+          <p>Vende tus componentes a través de una subasta totalmente online.</p>
+          <a href="#" class="btn btn-primary">Notifícame</a>
+        </div>
+        <div class="promo-deco" aria-hidden="true">⚡</div>
+      </section>
+
+    </main>
+
+    <aside class="sidebar" aria-label="Noticias y novedades">
+      <h2 class="section-title">Noticias</h2>
+
+      <article class="news-card">
+        <span class="news-tag">Gigabyte</span>
+        <h3>GIGABYTE AERO X16 y GAMING A16 ya disponibles</h3>
+        <time datetime="2025-07-16" class="news-date">16 Jul 2025 · Mundial</time>
+        <p>GIGABYTE anuncia sus nuevas AI PCs: el AERO X16 y el GAMING A16, optimizados para inteligencia artificial local.</p>
+      </article>
+
+      <article class="news-card">
+        <span class="news-tag">Gigabyte</span>
+        <h3>AI TOP Utility 4.0: IA local más accesible</h3>
+        <time datetime="2025-06-20" class="news-date">20 Jun 2025 · Mundial</time>
+        <p>GIGABYTE presenta AI TOP Utility 4.0, revolucionando el acceso a inteligencia artificial en equipos locales.</p>
+      </article>
+
+      <article class="news-card">
+        <span class="news-tag">Garantía</span>
+        <h3>Términos y Condiciones de Garantía</h3>
+        <time datetime="2025-01-01" class="news-date">Soporte técnico</time>
+        <p>Aplica únicamente para distribuidores/importadores autorizados. Consulta el lugar de compra para más información.</p>
+        <ul class="support-phones">
+          <li>🇧🇴 Bolivia <strong>+591-17095926</strong></li>
+          <li>🇦🇷 Argentina <strong>+54-1160912350</strong></li>
+          <li>🇨🇱 Chile <strong>+56-225989064</strong></li>
+        </ul>
+      </article>
+
+      <div class="sidebar-cta">
+        <p>¿Quieres acceder a ofertas exclusivas?</p>
+        <a href="#" class="btn btn-primary btn-full">Registrarse</a>
+        <a href="#" class="btn btn-ghost btn-full">Ya soy miembro</a>
+      </div>
+    </aside>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <p class="footer-tagline">TEAM UP. FIGHT ON.</p>
+        <nav class="footer-social" aria-label="Redes sociales">
+          <a href="#" aria-label="Instagram" class="social-link">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="#" aria-label="Twitter / X" class="social-link">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="#" aria-label="Facebook" class="social-link">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="#" aria-label="YouTube" class="social-link">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+        </nav>
+        <p class="footer-copy">&copy; 2025 KaiJu Tech. Todos los derechos reservados.</p>
+      </div>
+    </footer>
+
+  </div>
+
+</body>
+</html>
